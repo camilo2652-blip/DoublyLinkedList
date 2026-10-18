@@ -2,7 +2,7 @@
 
 namespace Backend
 {
-    internal class DoublyLinkedList
+    public class DoublyLinkedList<T>
     {
     }
 }
