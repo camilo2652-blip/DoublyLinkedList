@@ -11,7 +11,7 @@ do
     switch (option)
     {
         case "1":
-            Console.Write("Enter value to add (ascending order): ");
+            Console.Write("Enter value to add: ");
             list.AddOrder(Console.ReadLine()!);
             //Console.WriteLine("Item added successfully.");
             break;
@@ -28,7 +28,16 @@ do
         case "7":
 
         case "8":
-
+            Console.Write("Enter value to remove (first occurrence): ");
+            var itemToRemove = Console.ReadLine()!;
+            if (!list.Contains(itemToRemove))
+            {
+                Console.WriteLine($"Item: '{itemToRemove}' not exists in the list.");
+                break;
+            }
+            list.Remove(itemToRemove);
+            Console.WriteLine($"Item: '{itemToRemove}' removed.");
+            break;
         case "9":
 
         case "0":
@@ -57,6 +66,6 @@ string Menu()
     Console.WriteLine("8. Remove one occurrence");
     Console.WriteLine("9. Remove all occurrences");
     Console.WriteLine("0. Exit");
-    Console.Write("\nEnter your option? ");
+    Console.Write("\nEnter your option: ");
     return Console.ReadLine()!;
 }
