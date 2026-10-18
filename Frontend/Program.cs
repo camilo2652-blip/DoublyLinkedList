@@ -11,7 +11,10 @@ do
     switch (option)
     {
         case "1":
-
+            Console.Write("Enter value to add (ascending order): ");
+            list.AddOrder(Console.ReadLine()!);
+            //Console.WriteLine("Item added successfully.");
+            break;
         case "2":
 
         case "3":
