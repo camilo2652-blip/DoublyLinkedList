@@ -22,24 +22,22 @@ public class DoublyLinkedList<T> where T : IComparable<T>
             _tail = newNode;
             return;
         }
-        if (data.CompareTo(_head.Data!) <= 0)
+        if (CompareValues(data, _head.Data!) <= 0)
         {
             newNode.Next = _head;
             _head.Prev = newNode;
             _head = newNode;
             return;
         }
-
-        if (data.CompareTo(_tail!.Data!) >= 0)
+        if (CompareValues(data, _tail!.Data!) >= 0)
         {
             _tail.Next = newNode;
             newNode.Prev = _tail;
             _tail = newNode;
             return;
         }
-
         var current = _head;
-        while (current.Next != null && current.Next.Data!.CompareTo(data) < 0)
+        while (current.Next != null && CompareValues(current.Next.Data!, data) < 0)
         {
             current = current.Next;
         }
@@ -47,6 +45,17 @@ public class DoublyLinkedList<T> where T : IComparable<T>
         newNode.Prev = current;
         current.Next!.Prev = newNode;
         current.Next = newNode;
+    }
+    private int CompareValues(T x, T y)
+    {
+        string strX = x?.ToString() ?? string.Empty;
+        string strY = y?.ToString() ?? string.Empty;
+
+        if (double.TryParse(strX, out double numX) && double.TryParse(strY, out double numY))
+        {
+            return numX.CompareTo(numY);
+        }
+        return strX.CompareTo(strY);
     }
     public bool Contains(T data)
     {
