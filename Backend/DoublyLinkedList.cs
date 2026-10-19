@@ -148,7 +148,30 @@ public class DoublyLinkedList<T> where T : IComparable<T>
         _tail = temp;  
     }
 
+    private Dictionary<T,int> GetFrequencies()
+    {
+        var frecuencies = new Dictionary<T,int>();
+        var current = _head;
 
+        while (current != null)
+        {
+            if (current.Data != null)
+            {
+                if (frecuencies.ContainsKey(current.Data))
+                    frecuencies[current.Data]++;
+                else
+                    frecuencies[current.Data] = 1;
+            }
+            current = current.Next;
+        }
+        return frecuencies;
+    }
+
+    public Dictionary<T, int> GetFrequencyDictionary()
+    {
+        return GetFrequencies(); 
+    }
+        
 
 }
 

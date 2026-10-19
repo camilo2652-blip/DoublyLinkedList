@@ -31,7 +31,21 @@ do
         case "5":
 
         case "6":
-
+            var freqs = list.GetFrequencyDictionary();
+            if (freqs.Count == 0)
+            {
+                Console.WriteLine("The list is Empty.");
+            }
+            else
+            {
+                Console.WriteLine("---Ocurrences Graphic---");
+                foreach (var pair in freqs)
+                {
+                    var stars = new string('*', pair.Value);
+                    Console.WriteLine($"{pair.Key} {stars}");
+                }
+            }
+            break;
         case "7":
             Console.Write("Enter value to search: ");
             var itemToSearch = Console.ReadLine()!;
