@@ -31,9 +31,7 @@ do
         case "5":
 
         case "6":
-            list.ReverseLinks();
-            Console.WriteLine("lis sorted descedin.");
-            break;
+
         case "7":
             Console.Write("Enter value to search: ");
             var itemToSearch = Console.ReadLine()!;
