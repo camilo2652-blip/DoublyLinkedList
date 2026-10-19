@@ -1,4 +1,5 @@
 ﻿using Backend;
+using System.ComponentModel;
 
 
 
@@ -24,7 +25,9 @@ do
         case "5":
 
         case "6":
-
+            list.ReverseLinks();
+            Console.WriteLine("lis sorted descedin.");
+            break;
         case "7":
 
         case "8":

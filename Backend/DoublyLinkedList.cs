@@ -1,5 +1,7 @@
 ﻿
 
+using System.Runtime.InteropServices;
+
 namespace Backend;
 
 public class DoublyLinkedList<T> where T : IComparable<T>
@@ -46,13 +48,6 @@ public class DoublyLinkedList<T> where T : IComparable<T>
         current.Next!.Prev = newNode;
         current.Next = newNode;
     }
-
-
-
-
-
-
-
     public bool Contains(T data)
     {
         var current = _head;
@@ -66,10 +61,6 @@ public class DoublyLinkedList<T> where T : IComparable<T>
         }
         return false;
     }
-
-
-
-
     public void Remove(T data)
     {
         var current = _head;
@@ -102,7 +93,29 @@ public class DoublyLinkedList<T> where T : IComparable<T>
             current = current.Next;
         }
     }
+
+    public void ReverseLinks()
+    {
+        if (_head == null || _head == _tail) return;
+
+        var current = _head;
+        DoubleNode<T>? temp = null;
+        while (current != null)
+        {
+            temp = current.Prev;
+            current.Prev = current.Next;
+            current.Next = temp;
+            current = current.Prev;
+        }
+        temp = _head;
+        _head = _tail;
+        _tail = temp;  
+    }
+
+
+
 }
+
 
 
 
