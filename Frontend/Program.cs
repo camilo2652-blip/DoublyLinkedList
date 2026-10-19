@@ -17,11 +17,13 @@ do
             //Console.WriteLine("Item added successfully.");
             break;
         case "2":
-            Console.WriteLine("---List (showing Forward)");
+            Console.WriteLine("---List (showing Forward---)");
             Console.WriteLine(list);
             break;
         case "3":
-
+            Console.WriteLine("---List (showing Backward---)");
+            Console.WriteLine(list.ToStringReverse());
+            break;
         case "4":
 
         case "5":
