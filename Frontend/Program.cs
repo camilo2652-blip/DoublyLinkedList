@@ -25,7 +25,9 @@ do
             Console.WriteLine(list.ToStringReverse());
             break;
         case "4":
-
+            list.ReverseLinks();
+            Console.WriteLine("List sorted descending successfully.");
+            break;
         case "5":
 
         case "6":
