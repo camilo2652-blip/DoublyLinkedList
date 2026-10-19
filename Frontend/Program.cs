@@ -17,7 +17,9 @@ do
             //Console.WriteLine("Item added successfully.");
             break;
         case "2":
-
+            Console.WriteLine("---List (showing Forward)");
+            Console.WriteLine(list);
+            break;
         case "3":
 
         case "4":

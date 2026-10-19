@@ -61,6 +61,33 @@ public class DoublyLinkedList<T> where T : IComparable<T>
         }
         return false;
     }
+
+    public override string ToString()
+    {
+        var output = string.Empty;
+        var current = _head;
+        while (current != null)
+        {
+            output += $"{current.Data} <-> ";
+            current = current.Next;
+        }
+        return $"{output} null";
+    }
+
+    public string ToStringReverse()
+    {
+        var output = string.Empty;
+        var current = _tail;
+        while (current != null)
+        {
+            output += $"{current.Data} <-> ";
+            current = current.Prev;
+        }
+        return $"{output} null";
+    }
+
+
+
     public void Remove(T data)
     {
         var current = _head;
