@@ -33,7 +33,12 @@ do
             Console.WriteLine("lis sorted descedin.");
             break;
         case "7":
-
+            Console.Write("Enter value to search: ");
+            var itemToSearch = Console.ReadLine()!;
+            Console.WriteLine(list.Contains(itemToSearch)
+                ? $"The item: '{itemToSearch}' exists!"
+                : $"The item: '{itemToSearch}' doesn't exist!");
+            break;
         case "8":
             Console.Write("Enter value to remove (first occurrence): ");
             var itemToRemove = Console.ReadLine()!;
