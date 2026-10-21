@@ -150,21 +150,43 @@ public class DoublyLinkedList<T> where T : IComparable<T>
 
     private Dictionary<T,int> GetFrequencies()
     {
-        var frecuencies = new Dictionary<T,int>();
+        var frequencies = new Dictionary<T,int>();
         var current = _head;
 
         while (current != null)
         {
             if (current.Data != null)
             {
-                if (frecuencies.ContainsKey(current.Data))
-                    frecuencies[current.Data]++;
+                if (frequencies.ContainsKey(current.Data))
+                    frequencies[current.Data]++;
                 else
-                    frecuencies[current.Data] = 1;
+                    frequencies[current.Data] = 1;
             }
             current = current.Next;
         }
-        return frecuencies;
+        return frequencies;
+    }
+
+    public List<T> GetModes()
+    {
+        var frequencies = GetFrequencies();
+        var modes = new List<T>();
+        int maxFreq = 0;
+
+        foreach (var pair in frequencies)
+        {
+            if (pair.Value  > maxFreq)
+            {
+                maxFreq = pair.Value;
+                modes.Clear();
+                modes.Add(pair.Key);
+            }
+            else if (pair.Value == maxFreq)
+            {
+                modes.Add(pair.Key);
+            }
+        }
+        return modes;
     }
 
     public Dictionary<T, int> GetFrequencyDictionary()

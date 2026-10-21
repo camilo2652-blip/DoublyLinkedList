@@ -29,6 +29,15 @@ do
             Console.WriteLine("List sorted descending successfully.");
             break;
         case "5":
+            var modes = list.GetModes();
+            if (modes.Count == 0)
+                Console.WriteLine("The list is empty.");
+            else if (modes.Count == 1) 
+                Console.WriteLine($"The mode is: {modes[0]}");
+            else 
+                Console.WriteLine($"The modes are: {string.Join(" and ", modes)}");
+            break;
+
 
         case "6":
             var freqs = list.GetFrequencyDictionary();
