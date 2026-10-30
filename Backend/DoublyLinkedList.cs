@@ -167,6 +167,16 @@ public class DoublyLinkedList<T> where T : IComparable<T>
         return frequencies;
     }
 
+    public int RemoveAllOccurrences(T data)
+    {
+        int count = 0;
+        while (Contains(data))
+        {
+            Remove(data);
+            count++;
+        }
+        return count;
+    }
     public List<T> GetModes()
     {
         var frequencies = GetFrequencies();

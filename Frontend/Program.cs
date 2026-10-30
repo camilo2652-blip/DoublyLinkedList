@@ -74,7 +74,11 @@ do
             Console.WriteLine($"Item: '{itemToRemove}' removed.");
             break;
         case "9":
-
+            Console.Write("Enter value to remove all ocurrences: ");
+            var itemToRemoveAll = Console.ReadLine()!;
+            int removedCount = list.RemoveAllOccurrences(itemToRemoveAll);
+            Console.WriteLine($"Removed {removedCount} occurrence(s) of '{itemToRemoveAll}'. ");
+            break;
         case "0":
             Console.WriteLine("Exiting program...");
             break;
