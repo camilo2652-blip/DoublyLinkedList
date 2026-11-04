@@ -1,5 +1,5 @@
 ﻿using Backend;
-using System.ComponentModel;
+
 
 
 
@@ -14,7 +14,7 @@ do
         case "1":
             Console.Write("Enter value to add: ");
             list.AddOrder(Console.ReadLine()!);
-            //Console.WriteLine("Item added successfully.");
+            Console.WriteLine("Item added successfully.");
             break;
         case "2":
             Console.WriteLine("---List (showing Forward---)");
